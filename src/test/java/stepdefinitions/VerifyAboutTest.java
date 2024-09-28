@@ -33,6 +33,7 @@ public class VerifyAboutTest {
 	By dashboard = By.xpath("//h6[text()='Dashboard']");
 	By profiledd = By.xpath("//span[@class='oxd-userdropdown-tab']");
 	By about = By.xpath("//ul[@class='oxd-dropdown-menu']//li[1]");
+	By support = By.xpath("//ul[@class='oxd-dropdown-menu']//li[2]");
 	
 
 	public VerifyAboutTest(Hooks hooks) {
@@ -103,6 +104,28 @@ public class VerifyAboutTest {
 		String aboutvalue = excelUtil.getCellData(sheet, "value", 2);
 		By aboutdetails = By.xpath("//p[text()='"+aboutvalue+"']");
 		if(elementUtil.isElementDisplayed(aboutdetails)) {
+			ExtentCucumberAdapter.addTestStepLog(module + " section details verified");
+		}
+		else {
+			ExtentCucumberAdapter.addTestStepLog("Profile section details failed");
+			Assert.fail("Profile section details failed");
+		}
+	}
+	
+	@When("I navigate to the support section")
+	public void i_navigate_to_the_support_section() throws InterruptedException {
+
+		elementUtil.clickElement(support);
+		Thread.sleep(2000);
+	}
+
+	@Then("I should see the support section details")
+	public void i_should_see_the_support_section_details() {
+		
+		String module = excelUtil.getCellData(sheet, "module", 3);
+		String supportvalue = excelUtil.getCellData(sheet, "value", 3);
+		By supportdetails = By.xpath("//a[text()='"+supportvalue+"']");
+		if(elementUtil.isElementDisplayed(supportdetails)) {
 			ExtentCucumberAdapter.addTestStepLog(module + " section details verified");
 		}
 		else {

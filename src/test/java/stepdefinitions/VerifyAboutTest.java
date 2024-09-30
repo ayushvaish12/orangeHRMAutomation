@@ -102,7 +102,7 @@ public class VerifyAboutTest {
 		
 		String module = excelUtil.getCellData(sheet, "module", 2);
 		String aboutvalue = excelUtil.getCellData(sheet, "value", 2);
-		By aboutdetails = By.xpath("//p[text()='"+aboutvalue+"']");
+		By aboutdetails = By.xpath("(//p[text()='"+aboutvalue+"'])[2]");
 		if(elementUtil.isElementDisplayed(aboutdetails)) {
 			ExtentCucumberAdapter.addTestStepLog(module + " section details verified");
 		}

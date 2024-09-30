@@ -1,4 +1,4 @@
-Feature: Login to OrangeHRM and Verify About Section
+Feature: Login to OrangeHRM and Verify Profile Section
 
   Scenario Outline: Successful login and verification of the About section
     Given I am on the OrangeHRM login page from given sheetname "<SheetName>"

@@ -16,8 +16,8 @@ This project automates the UI testing of the **OrangeHRM** website using **Selen
 ## Project Structure
 The project follows a typical Maven structure:
 
-- src/test/java : 1. runners 2. stepdefinitions 3. utils
-- src/test/resource : 1. features 2. test-data 3. extent.properties & extent-config.xml
+- src/test/java : - runners - stepdefinitions - utils
+- src/test/resource : - features - test-data - extent.properties & extent-config.xml
 - target : for cucumber report
 - test-output : for spark & pdf report
 - pom.xml
